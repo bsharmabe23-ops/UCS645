@@ -76,8 +76,8 @@ Nested loops were parallelized, and a reduction clause was used to safely accumu
 ### Speedup Graph
 
 ### Speedup Graph
+![Q1 Speedup Graph](q1.jpeg)
 
-![Q1 Speedup Graph](q1.jpg)
 
 
 ### Analysis
@@ -104,8 +104,8 @@ The Smith–Waterman algorithm performs local DNA sequence alignment using dynam
 | 8 | 0.003777 | 0.217 | 0.027 | 10 |
 
 ### Speedup Graph
+![Q2 Speedup Graph](q2.jpeg)
 
-![Q2 Speedup Graph](q2.jpg)
 
 
 ### Analysis
@@ -132,8 +132,8 @@ This program simulates heat diffusion over a two-dimensional grid using the fini
 | 8 | 0.259488 | 0.187 | 0.023 |
 
 ### Speedup Graph
+![Q3 Speedup Graph](q3.jpeg)
 
-![Q3 Speedup Graph](q3.jpg)
 
 ### Analysis
 
