@@ -7,7 +7,6 @@
 **Platform:** Ubuntu (WSL)  
 
 ---
-
 ## 1. Introduction
 
 Parallel computing is an important technique used to improve the performance of computationally intensive applications by dividing work among multiple processor cores. OpenMP provides a shared-memory programming model that allows programs to be parallelized using threads with minimal changes to the original sequential code.
