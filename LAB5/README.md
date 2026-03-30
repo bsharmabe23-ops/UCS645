@@ -1,4 +1,3 @@
-
 # LAB 5 - MPI Programming Assignment
 
 ## Name: Bipasha Sharma
@@ -26,7 +25,7 @@ The aim of this lab is to understand parallel programming using MPI (Message Pas
 
 For all programs, the following commands were used:
 
-```
+```bash
 mpicc filename.c -o filename
 mpirun --oversubscribe -np 4 ./filename
 ```
@@ -42,17 +41,22 @@ X[i] = a * X[i] + Y[i]
 
 ## Approach
 
-* The total data is divided among all processes.
-* Each process performs calculations on its own portion.
-* Parallel execution reduces overall computation time.
+* The data is divided among multiple processes.
+* Each process performs calculations on its part.
+* Execution happens in parallel.
 
 ## Output
 
-Each process calculates part of the result and prints execution time.
+```
+Process 1 time = 0.000044
+Process 0 time = 0.000045
+Process 2 time = 0.000066
+Process 3 time = 0.000040
+```
 
 ## Conclusion
 
-This program shows how parallel processing improves performance for vector operations.
+Parallel execution reduces computation time for vector operations.
 
 ---
 
@@ -65,19 +69,19 @@ Compare manual communication with MPI_Bcast.
 ## Approach
 
 * First, data is sent manually using MPI_Send and MPI_Recv.
-* Then, the same operation is performed using MPI_Bcast.
-* Time is measured in both cases.
+* Then, MPI_Bcast is used.
+* Execution time is measured in both cases.
 
 ## Output
 
-Displays:
-
-* Manual Broadcast Time
-* MPI_Bcast Time
+```
+Manual Broadcast Time = 0.025857
+MPI_Bcast Time = 0.002140
+```
 
 ## Conclusion
 
-MPI_Bcast is faster because it uses optimized communication (tree-based method).
+MPI_Bcast is faster and more efficient than manual communication.
 
 ---
 
@@ -85,17 +89,19 @@ MPI_Bcast is faster because it uses optimized communication (tree-based method).
 
 ## Problem
 
-Compute the dot product of two large vectors.
+Compute dot product of two vectors.
 
 ## Approach
 
-* Each process computes a part of the dot product.
-* MPI_Reduce is used to combine all partial results.
+* Each process computes part of the result.
+* MPI_Reduce combines all results.
 
 ## Output
 
-* Final dot product value
-* Execution time
+```
+Dot Product = 2000000.000000
+Time = 0.001149
+```
 
 ## Conclusion
 
@@ -107,23 +113,30 @@ MPI_Reduce efficiently combines results from multiple processes.
 
 ## Problem
 
-Find whether numbers are prime.
+Check whether numbers are prime.
 
 ## Approach
 
 * A number is checked for divisibility up to √n.
-* Each process handles different numbers.
+* Work is divided among processes.
 
 ## Output
 
-Example:
+```
 2 is Prime
 3 is Prime
 4 is Not Prime
+5 is Prime
+6 is Not Prime
+7 is Prime
+8 is Not Prime
+9 is Not Prime
+10 is Not Prime
+```
 
 ## Conclusion
 
-Parallel execution allows checking multiple numbers at the same time.
+Parallel execution allows checking multiple numbers simultaneously.
 
 ---
 
@@ -131,24 +144,25 @@ Parallel execution allows checking multiple numbers at the same time.
 
 ## Problem
 
-Find all perfect numbers.
+Find perfect numbers.
 
 ## Approach
 
-* For each number, sum of divisors is calculated.
+* Sum of divisors is calculated.
 * If sum equals the number → perfect number.
 * Work is divided among processes.
 
 ## Output
 
-Example:
-6 is Perfect
-28 is Perfect
-496 is Perfect
+```
+Process 0: 6 is Perfect
+Process 2: 28 is Perfect
+Process 2: 496 is Perfect
+```
 
 ## Conclusion
 
-Parallel processing improves performance for large ranges.
+Parallel processing improves efficiency for large computations.
 
 ---
 
@@ -157,18 +171,18 @@ Parallel processing improves performance for large ranges.
 * MPI basics (rank, size)
 * Blocking vs Non-blocking communication
 * MPI_Bcast and MPI_Reduce
-* Parallel computation techniques
-* Compilation and execution of MPI programs
+* Parallel execution using multiple processes
 
 ---
 
 ## 🔹 Result
 
-All programs (Q1 to Q5) were successfully implemented and executed.
+All programs (Q1 to Q5) were successfully compiled and executed.
 
 ---
 
 ## 🔹 Final Conclusion
 
 This lab helped in understanding how parallel programming works using MPI.
-Multiple processes can work together efficiently, reducing computation time and improving performance.
+Multiple processes can work together to complete tasks faster and more efficiently.
+
